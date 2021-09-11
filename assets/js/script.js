@@ -60,8 +60,6 @@ function quizGame() {
         button4.setAttribute("type", "button")
         button4.setAttribute("value", "Wrong")
 
-
-        // works
         answer2.addEventListener("click", function () {
             sendMessage2()
         })
@@ -78,7 +76,33 @@ function quizGame() {
 
         answer2.appendChild(button2)
         button2.setAttribute("type", "button")
-        button2.setAttribute("value", "Right right")
+        button2.setAttribute("value", "Wrong")
+
+        answer3.appendChild(button3)
+        button3.setAttribute("type", "button")
+        button3.setAttribute("value", "Right")
+
+        answer4.appendChild(button4)
+        button4.setAttribute("type", "button")
+        button4.setAttribute("value", "Wrong")
+
+        answer3.addEventListener("click", function () {
+            sendMessage3()
+        })
+
+        // quize pages need timer
+    }
+
+    function sendMessage3() {
+        startGame.textContent = "Correct!!!"
+
+        startButton.appendChild(startButton2)
+        startButton2.setAttribute("type", "button")
+        startButton2.setAttribute("value", "Right")
+
+        answer2.appendChild(button2)
+        button2.setAttribute("type", "button")
+        button2.setAttribute("value", "Wrong")
 
         answer3.appendChild(button3)
         button3.setAttribute("type", "button")
@@ -88,17 +112,14 @@ function quizGame() {
         button4.setAttribute("type", "button")
         button4.setAttribute("value", "Wrong")
 
-
-        // works
-        answer2.addEventListener("click", function () {
-            sendMessage3()
-        })
-
-        // quize pages need timer
+        startButton.addEventListener("click", function () {
+            sendMessage4()
+        }) 
     }
 
-    function sendMessage3() {
-        startGame.textContent = "Correct!!!"
+    function sendMessage4() {
+        startGame.textContent = "Correct Again!"
+
     }
 }
 
