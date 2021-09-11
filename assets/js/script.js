@@ -1,10 +1,4 @@
 
-// AS A coding boot camp student
-// I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-// SO THAT I can gauge my progress compared to my peers
-// ```
-
-// ## Acceptance Criteria
 
 // ```
 // GIVEN I am taking a code quiz
@@ -18,10 +12,16 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and my score
+var startGame = document.querySelector(".start-button")
+
+startGame.addEventListener("click", function() {
+    // send message to start game?
+})
+
 
 function quizGame () {
     // Need a starting page with start button
-    
+
     // add event listener to start game
 
 
