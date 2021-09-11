@@ -12,22 +12,28 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and my score
-var startGame = document.querySelector(".start-button")
-
+var startGame = document.querySelector(".question");
+var startButton = document.querySelector(".startbutton");
 
 
 function quizGame() {
     // Need a starting page with start button
+
     startGame.textContent = "Quiz Time!"
+
+    startButton.setAttribute("type", "button", "value", "Quiz")
     // add event listener to start game
-    startGame.addEventListener("click", function () {
+    startButton.addEventListener("click", function () {
         // send message to start game?
+
+        sendMessage();
     })
 
-
-
-
+    function sendMessage() {
+        startGame.textContent = "Quiz started!"
+    }
 
     // quize pages need timer
 }
+
 quizGame();
