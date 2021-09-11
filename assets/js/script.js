@@ -19,4 +19,14 @@
 // WHEN the game is over
 // THEN I can save my initials and my score
 
-function quizGame ()
+function quizGame () {
+    // Need a starting page with start button
+    
+    // add event listener to start game
+
+
+
+
+
+    // quize pages need timer
+}
