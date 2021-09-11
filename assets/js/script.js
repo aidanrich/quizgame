@@ -45,7 +45,28 @@ function quizGame() {
         startGame.textContent = "Quiz started!"
         startButton.appendChild(startButton2)
         startButton2.setAttribute("type", "button")
-        startButton2.setAttribute("value", "Go Go!")
+        startButton2.setAttribute("value", "Wrong")
+        
+        answer2.appendChild(button2)
+        button2.setAttribute("type", "button")
+        button2.setAttribute("value", "Right")
+
+        answer3.appendChild(button3)
+        button3.setAttribute("type", "button")
+        button3.setAttribute("value", "Wrong")
+
+        answer4.appendChild(button4)
+        button4.setAttribute("type", "button")
+        button4.setAttribute("value", "Wrong")
+
+
+        // needs somthing
+        if(answer2.addEventListener("click", function(){
+
+        })) {
+            startGame.textContent = "You win!"
+        }
+
     }
 
     // quize pages need timer
