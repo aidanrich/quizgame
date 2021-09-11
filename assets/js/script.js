@@ -14,14 +14,16 @@
 // THEN I can save my initials and my score
 var startGame = document.querySelector(".question");
 var startButton = document.querySelector(".startbutton");
-
+var startButton2 = document.createElement("input");
 
 function quizGame() {
     // Need a starting page with start button
 
     startGame.textContent = "Quiz Time!"
-
-    startButton.setAttribute("type", "button", "value", "Quiz")
+    startButton.appendChild(startButton2)
+    startButton2.setAttribute("type", "button")
+    startButton2.setAttribute("value", "Start Quiz!")
+    
     // add event listener to start game
     startButton.addEventListener("click", function () {
         // send message to start game?
