@@ -46,7 +46,7 @@ function quizGame() {
         startButton.appendChild(startButton2)
         startButton2.setAttribute("type", "button")
         startButton2.setAttribute("value", "Wrong")
-        
+
         answer2.appendChild(button2)
         button2.setAttribute("type", "button")
         button2.setAttribute("value", "Right")
@@ -61,15 +61,16 @@ function quizGame() {
 
 
         // needs somthing
-        if(answer2.addEventListener("click", function(){
+        answer2.addEventListener("click", function () {
+            sendMessage2()
+        })
 
-        })) {
-            startGame.textContent = "You win!"
-        }
-
+        // quize pages need timer
     }
 
-    // quize pages need timer
-}
+    function sendMessage2() {
+        startGame.textContent = "You win!"
+    }
 
+}
 quizGame();
