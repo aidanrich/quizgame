@@ -14,15 +14,15 @@
 // THEN I can save my initials and my score
 var startGame = document.querySelector(".start-button")
 
-startGame.addEventListener("click", function() {
-    // send message to start game?
-})
 
 
-function quizGame () {
+function quizGame() {
     // Need a starting page with start button
-
+    startGame.textContent = "Quiz Time!"
     // add event listener to start game
+    startGame.addEventListener("click", function () {
+        // send message to start game?
+    })
 
 
 
@@ -30,3 +30,4 @@ function quizGame () {
 
     // quize pages need timer
 }
+quizGame();
