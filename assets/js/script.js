@@ -66,25 +66,25 @@ function quizGame() {
 
     function sendMessage() {
         startGame.textContent = "Quiz started!"
-        mainQuestion.textContent = "Tigers are:"
+        mainQuestion.textContent = "Commonly used data types DO NOT include:"
         // removeChild might fix issues
         startButton.removeChild(startButton2)
 
         wrongAnswer1.appendChild(buttonWrong1)
         buttonWrong1.setAttribute("type", "button")
-        buttonWrong1.setAttribute("value", "Blue")
+        buttonWrong1.setAttribute("value", "Strings")
 
         answer2.appendChild(button2)
         button2.setAttribute("type", "button")
-        button2.setAttribute("value", "Orange")
+        button2.setAttribute("value", "Alerts")
 
         wrongAnswer2.appendChild(buttonWrong2)
         buttonWrong2.setAttribute("type", "button")
-        buttonWrong2.setAttribute("value", "Green")
+        buttonWrong2.setAttribute("value", "Booleans")
 
         wrongAnswer3.appendChild(buttonWrong3)
         buttonWrong3.setAttribute("type", "button")
-        buttonWrong3.setAttribute("value", "Purple")
+        buttonWrong3.setAttribute("value", "Numbers")
 
         answer2.addEventListener("click", function () {
             sendMessage2()
@@ -95,22 +95,22 @@ function quizGame() {
 
     function sendMessage2() {
         startGame.textContent = "Second question!"
-        mainQuestion.textContent = "Dragons are:"
+        mainQuestion.textContent = "The condition in an if/else statement is enclosed with ___."
 
         answer2.removeChild(button2)
 
         buttonWrong1.setAttribute("type", "button")
-        buttonWrong1.setAttribute("value", "dogs")
+        buttonWrong1.setAttribute("value", "quotes")
 
         buttonWrong2.setAttribute("type", "button")
-        buttonWrong2.setAttribute("value", "monkeys")
+        buttonWrong2.setAttribute("value", "curly brackets")
 
         answer3.appendChild(button3)
         button3.setAttribute("type", "button")
-        button3.setAttribute("value", "fantasy monsters")
+        button3.setAttribute("value", "parentheses")
 
         buttonWrong3.setAttribute("type", "button")
-        buttonWrong3.setAttribute("value", "cats")
+        buttonWrong3.setAttribute("value", "square brackets")
 
 
         answer3.addEventListener("click", function () {
@@ -122,22 +122,22 @@ function quizGame() {
 
     function sendMessage3() {
         startGame.textContent = "Third Question!"
-        mainQuestion.textContent = "Dogs have:"
+        mainQuestion.textContent = "Arrays in javaScript can be used to store ___."
 
         answer3.removeChild(button3)
 
         buttonWrong1.setAttribute("type", "button")
-        buttonWrong1.setAttribute("value", "Wings")
+        buttonWrong1.setAttribute("value", "numbers and strings")
 
         buttonWrong2.setAttribute("type", "button")
-        buttonWrong2.setAttribute("value", "Scales")
+        buttonWrong2.setAttribute("value", "other arrays")
 
         buttonWrong3.setAttribute("type", "button")
-        buttonWrong3.setAttribute("value", "Poison stingers")
+        buttonWrong3.setAttribute("value", "booleans")
 
         answer4.appendChild(button4)
         button4.setAttribute("type", "button")
-        button4.setAttribute("value", "Fur")
+        button4.setAttribute("value", "all of the above")
 
         answer4.addEventListener("click", function () {
             sendMessage4()
@@ -146,24 +146,24 @@ function quizGame() {
 
     function sendMessage4() {
         startGame.textContent = "Fourth Question!"
-        mainQuestion.textContent = "What's 2 + 2?"
+        mainQuestion.textContent = "String values must be enclosed within ___ when being assigned to variables."
 
         answer4.removeChild(button4)
 
         
 
         buttonWrong1.setAttribute("type", "button")
-        buttonWrong1.setAttribute("value", "One thousand")
+        buttonWrong1.setAttribute("value", "commas")
 
         buttonWrong2.setAttribute("type", "button")
-        buttonWrong2.setAttribute("value", "Negative ten")
+        buttonWrong2.setAttribute("value", "curly brackets")
 
         buttonWrong3.setAttribute("type", "button")
-        buttonWrong3.setAttribute("value", "Sixty six")
+        buttonWrong3.setAttribute("value", "parenthesis")
         
         answer5.appendChild(button5)
         button5.setAttribute("type", "button")
-        button5.setAttribute("value", "four")
+        button5.setAttribute("value", "quotes")
 
         answer5.addEventListener("click", function () {
             sendMessage5()
