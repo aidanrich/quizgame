@@ -19,6 +19,10 @@ var mainQuestion = document.querySelector(".question2")
 var startButton = document.querySelector(".startbutton");
 var startButton2 = document.createElement("input");
 
+// timer variables
+var timer = document.querySelector(".clock")
+
+// game button vars below
 var answer2 = document.querySelector(".answerbutton2");
 var button2 = document.createElement("input");
 
