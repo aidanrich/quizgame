@@ -25,6 +25,9 @@ var button3 = document.createElement("input");
 var answer4 = document.querySelector(".answerbutton4");
 var button4 = document.createElement("input");
 
+var WrongAnswer = document.querySelector(".wrong");
+var buttonWrong = document.createElement("input");
+
 
 function quizGame() {
     // Need a starting page with start button
