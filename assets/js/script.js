@@ -21,6 +21,7 @@ var startButton2 = document.createElement("input");
 
 // timer variables
 var timer = document.querySelector(".clock")
+var secondsleft = 60;
 
 // game button vars below
 var answer2 = document.querySelector(".answerbutton2");
