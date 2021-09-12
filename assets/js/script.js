@@ -21,7 +21,7 @@ var startButton2 = document.createElement("input");
 
 // timer variables
 var timer = document.querySelector(".clock")
-var secondsleft = 60;
+var secondsLeft = 60;
 
 // game button vars below
 var answer2 = document.querySelector(".answerbutton2");
@@ -60,11 +60,29 @@ function quizGame() {
     // add event listener to start game
     startButton.addEventListener("click", function () {
         // send message to start game?
-
+        timeLimit();
         sendMessage();
     })
 
+    function timeLimit() {
+        var timerInterval = setInterval(function () {
+            secondsLeft--;
+            timer.textContent = "Time left: " + secondsLeft;
+
+            if (secondsLeft === 0) {
+                clearInterval(timerInterval);
+
+                sendMessage6();
+            }
+
+        }, 1000);
+
+    }
+
+
+
     function sendMessage() {
+
         startGame.textContent = "Quiz started!"
         mainQuestion.textContent = "Commonly used data types DO NOT include:"
         // removeChild might fix issues
@@ -150,7 +168,7 @@ function quizGame() {
 
         answer4.removeChild(button4)
 
-        
+
 
         buttonWrong1.setAttribute("type", "button")
         buttonWrong1.setAttribute("value", "commas")
@@ -160,7 +178,7 @@ function quizGame() {
 
         buttonWrong3.setAttribute("type", "button")
         buttonWrong3.setAttribute("value", "parenthesis")
-        
+
         answer5.appendChild(button5)
         button5.setAttribute("type", "button")
         button5.setAttribute("value", "quotes")
