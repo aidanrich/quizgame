@@ -22,6 +22,7 @@ var startButton2 = document.createElement("input");
 // timer variables
 var timer = document.querySelector(".clock")
 var secondsLeft = 60;
+var wrongTime = 5;
 
 // game button vars below
 var answer2 = document.querySelector(".answerbutton2");
@@ -69,6 +70,23 @@ function quizGame() {
             secondsLeft--;
             timer.textContent = "Time left: " + secondsLeft;
 
+            wrongAnswer1.addEventListener("click", function() {
+                // needs work!
+                secondsLeft -= wrongTime;
+            })
+
+            wrongAnswer2.addEventListener("click", function() {
+                // needs work!
+                secondsLeft -= wrongTime;
+            })
+
+            wrongAnswer3.addEventListener("click", function() {
+                // needs work!
+                secondsLeft -= wrongTime;
+            })
+
+            
+
             if (secondsLeft === 0) {
                 clearInterval(timerInterval);
 
@@ -103,6 +121,7 @@ function quizGame() {
         wrongAnswer3.appendChild(buttonWrong3)
         buttonWrong3.setAttribute("type", "button")
         buttonWrong3.setAttribute("value", "Numbers")
+
 
         answer2.addEventListener("click", function () {
             sendMessage2()
