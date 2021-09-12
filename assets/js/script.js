@@ -27,8 +27,14 @@ var button3 = document.createElement("input");
 var answer4 = document.querySelector(".answerbutton4");
 var button4 = document.createElement("input");
 
-var wrongAnswer = document.querySelector(".wrong");
-var buttonWrong = document.createElement("input");
+var wrongAnswer1 = document.querySelector(".wrong1");
+var buttonWrong1 = document.createElement("input");
+
+var wrongAnswer2 = document.querySelector(".wrong2");
+var buttonWrong2 = document.createElement("input");
+
+var wrongAnswer3 = document.querySelector(".wrong3");
+var buttonWrong3 = document.createElement("input");
 
 
 function quizGame() {
@@ -51,21 +57,21 @@ function quizGame() {
         // removeChild might fix issues
         startButton.removeChild(startButton2)
         
-        wrongAnswer.appendChild(buttonWrong)
-        buttonWrong.setAttribute("type", "button")
-        buttonWrong.setAttribute("value", "Wrong")
+        wrongAnswer1.appendChild(buttonWrong1)
+        buttonWrong1.setAttribute("type", "button")
+        buttonWrong1.setAttribute("value", "Wrong")
 
         answer2.appendChild(button2)
         button2.setAttribute("type", "button")
         button2.setAttribute("value", "Right")
 
-        wrongAnswer.appendChild(buttonWrong)
-        buttonWrong.setAttribute("type", "button")
-        buttonWrong.setAttribute("value", "Wrong")
+        wrongAnswer2.appendChild(buttonWrong2)
+        buttonWrong2.setAttribute("type", "button")
+        buttonWrong2.setAttribute("value", "Wrong")
 
-        wrongAnswer.appendChild(buttonWrong)
-        buttonWrong.setAttribute("type", "button")
-        buttonWrong.setAttribute("value", "Wrong")
+        wrongAnswer3.appendChild(buttonWrong3)
+        buttonWrong3.setAttribute("type", "button")
+        buttonWrong3.setAttribute("value", "Wrong")
 
         answer2.addEventListener("click", function () {
             sendMessage2()
@@ -85,9 +91,7 @@ function quizGame() {
         button3.setAttribute("type", "button")
         button3.setAttribute("value", "Right")
 
-        answer4.appendChild(button4)
-        button4.setAttribute("type", "button")
-        button4.setAttribute("value", "Wrong")
+        
 
         answer3.addEventListener("click", function () {
             sendMessage3()
@@ -99,23 +103,13 @@ function quizGame() {
     function sendMessage3() {
         startGame.textContent = "Correct!!!"
 
-        startButton.appendChild(startButton2)
-        startButton2.setAttribute("type", "button")
-        startButton2.setAttribute("value", "Right")
-
-        answer2.appendChild(button2)
-        button2.setAttribute("type", "button")
-        button2.setAttribute("value", "Wrong")
-
-        answer3.appendChild(button3)
-        button3.setAttribute("type", "button")
-        button3.setAttribute("value", "Wrong")
+        answer3.removeChild(button3)
 
         answer4.appendChild(button4)
         button4.setAttribute("type", "button")
-        button4.setAttribute("value", "Wrong")
+        button4.setAttribute("value", "Right")
 
-        startButton.addEventListener("click", function () {
+        answer4.addEventListener("click", function () {
             sendMessage4()
         }) 
     }
