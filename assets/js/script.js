@@ -12,6 +12,8 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and my score
+
+
 var startGame = document.querySelector(".question");
 var startButton = document.querySelector(".startbutton");
 var startButton2 = document.createElement("input");
@@ -25,7 +27,7 @@ var button3 = document.createElement("input");
 var answer4 = document.querySelector(".answerbutton4");
 var button4 = document.createElement("input");
 
-var WrongAnswer = document.querySelector(".wrong");
+var wrongAnswer = document.querySelector(".wrong");
 var buttonWrong = document.createElement("input");
 
 
@@ -46,22 +48,24 @@ function quizGame() {
 
     function sendMessage() {
         startGame.textContent = "Quiz started!"
-
-        startButton.appendChild(startButton2)
-        startButton2.setAttribute("type", "button")
-        startButton2.setAttribute("value", "Wrong")
+        // removeChild might fix issues
+        startButton.removeChild(startButton2)
+        
+        wrongAnswer.appendChild(buttonWrong)
+        buttonWrong.setAttribute("type", "button")
+        buttonWrong.setAttribute("value", "Wrong")
 
         answer2.appendChild(button2)
         button2.setAttribute("type", "button")
         button2.setAttribute("value", "Right")
 
-        answer3.appendChild(button3)
-        button3.setAttribute("type", "button")
-        button3.setAttribute("value", "Wrong")
+        wrongAnswer.appendChild(buttonWrong)
+        buttonWrong.setAttribute("type", "button")
+        buttonWrong.setAttribute("value", "Wrong")
 
-        answer4.appendChild(button4)
-        button4.setAttribute("type", "button")
-        button4.setAttribute("value", "Wrong")
+        wrongAnswer.appendChild(buttonWrong)
+        buttonWrong.setAttribute("type", "button")
+        buttonWrong.setAttribute("value", "Wrong")
 
         answer2.addEventListener("click", function () {
             sendMessage2()
@@ -73,13 +77,9 @@ function quizGame() {
     function sendMessage2() {
         startGame.textContent = "Correct!"
 
-        startButton.appendChild(startButton2)
-        startButton2.setAttribute("type", "button")
-        startButton2.setAttribute("value", "Wrong")
 
-        answer2.appendChild(button2)
-        button2.setAttribute("type", "button")
-        button2.setAttribute("value", "Wrong")
+        answer2.removeChild(button2)
+        
 
         answer3.appendChild(button3)
         button3.setAttribute("type", "button")
