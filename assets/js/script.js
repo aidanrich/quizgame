@@ -22,7 +22,9 @@ var startButton2 = document.createElement("input");
 // timer variables
 var timer = document.querySelector(".clock")
 var secondsLeft = 60;
-var wrongTime = 5;
+var wrongTime1 = 5;
+var wrongTime2 = 5;
+var wrongTime3 = 5;
 
 // game button vars below
 var answer2 = document.querySelector(".answerbutton2");
@@ -62,6 +64,7 @@ function quizGame() {
     startButton.addEventListener("click", function () {
         // send message to start game?
         timeLimit();
+        bob();
         sendMessage();
     })
 
@@ -70,33 +73,40 @@ function quizGame() {
             secondsLeft--;
             timer.textContent = "Time left: " + secondsLeft;
 
-            wrongAnswer1.addEventListener("click", function() {
-                // needs work!
-                secondsLeft -= wrongTime;
-            })
+       if (secondsLeft === 0 || secondsLeft < 0) {
+        clearInterval(timerInterval);
 
-            wrongAnswer2.addEventListener("click", function() {
-                // needs work!
-                secondsLeft -= wrongTime;
-            })
-
-            wrongAnswer3.addEventListener("click", function() {
-                // needs work!
-                secondsLeft -= wrongTime;
-            })
-
-            
-
-            if (secondsLeft === 0) {
-                clearInterval(timerInterval);
-
-                sendMessage6();
-            }
+        sendMessage6();
+    }
 
         }, 1000);
 
     }
 
+    function bob() {
+    wrongAnswer1.addEventListener("click", function(event) {
+        // needs work!
+        event.stopPropagation();
+        console.log(secondsLeft)
+        secondsLeft = secondsLeft - 5;
+        console.log("after", secondsLeft )
+    })
+
+    wrongAnswer2.addEventListener("click", function(event) {
+        // needs work!
+        event.stopPropagation();
+        secondsLeft = secondsLeft - 5;
+    })
+
+    wrongAnswer3.addEventListener("click", function(event) {
+        // needs work!
+        event.stopPropagation();
+        secondsLeft = secondsLeft - 5;
+    })
+
+    }
+
+   
 
 
     function sendMessage() {
