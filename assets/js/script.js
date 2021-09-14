@@ -26,6 +26,8 @@ var secondsLeft = 60;
 
 
 // game button vars below
+var anyButton = document.querySelector("input");
+
 var answer2 = document.querySelector(".answerbutton2");
 var button2 = document.createElement("input");
 
@@ -58,15 +60,11 @@ var timerInterval = setInterval(function () {
 
     if (secondsLeft === 0 || secondsLeft < 0) {
         clearInterval(timerInterval);
-
-        myStop();
+        sendMessage6();
+        
     }
 
-    function myStop() {
-        if (sendMessage6) {
-            clearInterval(timerInterval);
-        }
-    }
+   
 
 }, 1000);
 
@@ -142,8 +140,22 @@ function quizGame() {
         buttonWrong3.setAttribute("value", "Numbers")
 
 
+        wrongAnswer1.addEventListener("click", function (event) {
+            sendMessage2()
+            event.stopPropagation();
+        })
+        wrongAnswer2.addEventListener("click", function (event) {
+            sendMessage2()
+            event.stopPropagation();
+        })
+        wrongAnswer3.addEventListener("click", function (event) {
+            sendMessage2()
+            event.stopPropagation();
+        })
+
         answer2.addEventListener("click", function () {
             sendMessage2()
+            
         })
 
         // quize pages need timer
@@ -168,6 +180,18 @@ function quizGame() {
         buttonWrong3.setAttribute("type", "button")
         buttonWrong3.setAttribute("value", "square brackets")
 
+        wrongAnswer1.addEventListener("click", function (event) {
+            sendMessage3()
+            event.stopPropagation();
+        })
+        wrongAnswer2.addEventListener("click", function (event) {
+            sendMessage3()
+            event.stopPropagation();
+        })
+        wrongAnswer3.addEventListener("click", function (event) {
+            sendMessage3()
+            event.stopPropagation();
+        })
 
         answer3.addEventListener("click", function () {
             sendMessage3()
@@ -194,6 +218,19 @@ function quizGame() {
         answer4.appendChild(button4)
         button4.setAttribute("type", "button")
         button4.setAttribute("value", "all of the above")
+
+        wrongAnswer1.addEventListener("click", function (event) {
+            sendMessage4()
+            event.stopPropagation();
+        })
+        wrongAnswer2.addEventListener("click", function (event) {
+            sendMessage4()
+            event.stopPropagation();
+        })
+        wrongAnswer3.addEventListener("click", function (event) {
+            sendMessage4()
+            event.stopPropagation();
+        })
 
         answer4.addEventListener("click", function () {
             sendMessage4()
@@ -223,6 +260,19 @@ function quizGame() {
             sendMessage5()
         })
 
+        wrongAnswer1.addEventListener("click", function (event) {
+            sendMessage5()
+            event.stopPropagation();
+        })
+        wrongAnswer2.addEventListener("click", function (event) {
+            sendMessage5()
+            event.stopPropagation();
+        })
+        wrongAnswer3.addEventListener("click", function (event) {
+            sendMessage5()
+            event.stopPropagation();
+        })
+
     }
 
     function sendMessage5() {
@@ -244,6 +294,19 @@ function quizGame() {
         buttonWrong3.setAttribute("type", "button")
         buttonWrong3.setAttribute("value", "Ewww")
 
+        wrongAnswer1.addEventListener("click", function (event) {
+            sendMessage6()
+            event.stopPropagation();
+        })
+        wrongAnswer2.addEventListener("click", function (event) {
+            sendMessage6()
+            event.stopPropagation();
+        })
+        wrongAnswer3.addEventListener("click", function (event) {
+            sendMessage6()
+            event.stopPropagation();
+        })
+
         answer6.addEventListener("click", function () {
             sendMessage6();
             // myStopFunction(); timerInterval is not a global var?
@@ -256,7 +319,8 @@ function quizGame() {
         mainQuestion.textContent = "I'm very cool indeed."
 
         clearInterval(timerInterval);
-
+ 
+    
 
         answer6.removeChild(button6)
         wrongAnswer1.removeChild(buttonWrong1)
