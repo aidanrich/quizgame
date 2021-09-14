@@ -22,9 +22,8 @@ var startButton2 = document.createElement("input");
 // timer variables
 var timer = document.querySelector(".clock")
 var secondsLeft = 60;
-var wrongTime1 = 5;
-var wrongTime2 = 5;
-var wrongTime3 = 5;
+
+
 
 // game button vars below
 var answer2 = document.querySelector(".answerbutton2");
@@ -52,6 +51,7 @@ var wrongAnswer3 = document.querySelector(".wrong3");
 var buttonWrong3 = document.createElement("input");
 
 
+
 function quizGame() {
     // Need a starting page with start button
 
@@ -73,40 +73,48 @@ function quizGame() {
             secondsLeft--;
             timer.textContent = "Time left: " + secondsLeft;
 
-       if (secondsLeft === 0 || secondsLeft < 0) {
-        clearInterval(timerInterval);
 
-        sendMessage6();
-    }
+
+            if (secondsLeft === 0 || secondsLeft < 0) {
+                clearInterval(timerInterval);
+
+                myStop();
+            }
+
+            function myStop() {
+                if (sendMessage6) {
+                    clearInterval(timerInterval);
+                }
+            }
 
         }, 1000);
 
     }
 
     function bob() {
-    wrongAnswer1.addEventListener("click", function(event) {
-        // needs work!
-        event.stopPropagation();
-        console.log(secondsLeft)
-        secondsLeft = secondsLeft - 5;
-        console.log("after", secondsLeft )
-    })
+        wrongAnswer1.addEventListener("click", function (event) {
 
-    wrongAnswer2.addEventListener("click", function(event) {
-        // needs work!
-        event.stopPropagation();
-        secondsLeft = secondsLeft - 5;
-    })
+            event.stopPropagation();
+            console.log(secondsLeft)
+            secondsLeft = secondsLeft - 5;
+            console.log("after", secondsLeft)
+        })
 
-    wrongAnswer3.addEventListener("click", function(event) {
-        // needs work!
-        event.stopPropagation();
-        secondsLeft = secondsLeft - 5;
-    })
+        wrongAnswer2.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+            secondsLeft = secondsLeft - 5;
+        })
+
+        wrongAnswer3.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+            secondsLeft = secondsLeft - 5;
+        })
 
     }
 
-   
+
 
 
     function sendMessage() {
@@ -197,8 +205,6 @@ function quizGame() {
 
         answer4.removeChild(button4)
 
-
-
         buttonWrong1.setAttribute("type", "button")
         buttonWrong1.setAttribute("value", "commas")
 
@@ -238,7 +244,9 @@ function quizGame() {
         buttonWrong3.setAttribute("value", "Ewww")
 
         answer6.addEventListener("click", function () {
-            sendMessage6()
+            sendMessage6();
+            // myStopFunction(); timeInterval is not a global var?
+            // clearInterval(timerInterval);
         })
     }
 
@@ -246,11 +254,17 @@ function quizGame() {
         startGame.textContent = "Good answer"
         mainQuestion.textContent = "I'm very cool indeed."
 
+        
+
+        
         answer6.removeChild(button6)
         wrongAnswer1.removeChild(buttonWrong1)
         wrongAnswer2.removeChild(buttonWrong2)
         wrongAnswer3.removeChild(buttonWrong3)
     }
+    // function myStopFunction() {
+
+    // }
 }
 
 
