@@ -23,7 +23,13 @@ var startButton2 = document.createElement("input");
 var timer = document.querySelector(".clock")
 var secondsLeft = 60;
 
+// local storage 
+var saveButton = document.querySelector(".endbutton");
+var endButton = document.createElement("input")
+var nameInput = document.querySelector(".field");
+var field = document.createElement("input")
 
+var score = document.querySelector(".finalscore");
 
 // game button vars below
 
@@ -318,17 +324,30 @@ function quizGame() {
     }
 
     function sendMessage6() {
-        startGame.textContent = "Good answer"
-        mainQuestion.textContent = "I'm very cool indeed."
+        startGame.textContent = "You're done!"
+        mainQuestion.textContent = "Thanks for playing."
 
         clearInterval(timerInterval);
-
-
-
         answer6.remove(button6)
         wrongAnswer1.remove(buttonWrong1)
         wrongAnswer2.remove(buttonWrong2)
         wrongAnswer3.remove(buttonWrong3)
+
+        saveButton.appendChild(endButton);
+        endButton.setAttribute("type", "button")
+        endButton.setAttribute("value", "Your name");
+        nameInput.appendChild(field)
+        field.setAttribute("type", "text")
+
+        saveButton.addEventListener("click", () => {
+            console.log(field.value)
+            localStorage.setItem("player", field.value)
+            localStorage.setItem("finalscore", secondsLeft)
+            console.log(secondsLeft);
+            score = localStorage.getItem("player", + "finalscore")
+            console.log(score);
+        })
+
     }
     // function myStopFunction() {
 
