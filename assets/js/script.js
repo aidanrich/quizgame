@@ -26,7 +26,7 @@ var secondsLeft = 60;
 
 
 // game button vars below
-var anyButton = document.querySelector("input");
+
 
 var answer2 = document.querySelector(".answerbutton2");
 var button2 = document.createElement("input");
@@ -52,21 +52,7 @@ var buttonWrong2 = document.createElement("input");
 var wrongAnswer3 = document.querySelector(".wrong3");
 var buttonWrong3 = document.createElement("input");
 
-var timerInterval = setInterval(function () {
-    secondsLeft--;
-    timer.textContent = "Time left: " + secondsLeft;
 
-
-
-    if (secondsLeft === 0 || secondsLeft < 0) {
-        clearInterval(timerInterval);
-        sendMessage6();
-        
-    }
-
-   
-
-}, 1000);
 
 
 function quizGame() {
@@ -78,17 +64,34 @@ function quizGame() {
     startButton2.setAttribute("value", "Start Quiz!")
 
     // add event listener to start game
-    startButton.addEventListener("click", function () {
+    startButton.addEventListener("click", function (event) {
         // send message to start game?
-        timeLimit();
+        event.stopPropagation();
+        // timeLimit();
         bob();
         sendMessage();
     })
 
-    function timeLimit() {
-        timerInterval
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timer.textContent = "Time left: " + secondsLeft;
 
-    }
+
+
+        if (secondsLeft === 0 || secondsLeft < 0) {
+            clearInterval(timerInterval);
+            sendMessage6();
+
+        }
+
+
+
+    }, 1000);
+    // function timeLimit() {
+    //     timerInterval();
+
+    // }
+
 
     function bob() {
         wrongAnswer1.addEventListener("click", function (event) {
@@ -121,7 +124,7 @@ function quizGame() {
         startGame.textContent = "Quiz started!"
         mainQuestion.textContent = "Commonly used data types DO NOT include:"
         // removeChild might fix issues
-        startButton.removeChild(startButton2)
+        startButton.remove(startButton2)
 
         wrongAnswer1.appendChild(buttonWrong1)
         buttonWrong1.setAttribute("type", "button")
@@ -155,7 +158,7 @@ function quizGame() {
 
         answer2.addEventListener("click", function () {
             sendMessage2()
-            
+
         })
 
         // quize pages need timer
@@ -165,7 +168,7 @@ function quizGame() {
         startGame.textContent = "Second question!"
         mainQuestion.textContent = "The condition in an if/else statement is enclosed with ___."
 
-        answer2.removeChild(button2)
+        answer2.remove(button2)
 
         buttonWrong1.setAttribute("type", "button")
         buttonWrong1.setAttribute("value", "quotes")
@@ -204,7 +207,7 @@ function quizGame() {
         startGame.textContent = "Third Question!"
         mainQuestion.textContent = "Arrays in javaScript can be used to store ___."
 
-        answer3.removeChild(button3)
+        answer3.remove(button3)
 
         buttonWrong1.setAttribute("type", "button")
         buttonWrong1.setAttribute("value", "numbers and strings")
@@ -241,7 +244,7 @@ function quizGame() {
         startGame.textContent = "Fourth Question!"
         mainQuestion.textContent = "String values must be enclosed within ___ when being assigned to variables."
 
-        answer4.removeChild(button4)
+        answer4.remove(button4)
 
         buttonWrong1.setAttribute("type", "button")
         buttonWrong1.setAttribute("value", "commas")
@@ -279,7 +282,7 @@ function quizGame() {
         startGame.textContent = "Final Question!"
         mainQuestion.textContent = "Am I a cool guy?"
 
-        answer5.removeChild(button5)
+        answer5.remove(button5)
 
         answer6.appendChild(button6)
         button6.setAttribute("type", "button")
@@ -319,13 +322,13 @@ function quizGame() {
         mainQuestion.textContent = "I'm very cool indeed."
 
         clearInterval(timerInterval);
- 
-    
 
-        answer6.removeChild(button6)
-        wrongAnswer1.removeChild(buttonWrong1)
-        wrongAnswer2.removeChild(buttonWrong2)
-        wrongAnswer3.removeChild(buttonWrong3)
+
+
+        answer6.remove(button6)
+        wrongAnswer1.remove(buttonWrong1)
+        wrongAnswer2.remove(buttonWrong2)
+        wrongAnswer3.remove(buttonWrong3)
     }
     // function myStopFunction() {
 
