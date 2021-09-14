@@ -50,6 +50,25 @@ var buttonWrong2 = document.createElement("input");
 var wrongAnswer3 = document.querySelector(".wrong3");
 var buttonWrong3 = document.createElement("input");
 
+var timerInterval = setInterval(function () {
+    secondsLeft--;
+    timer.textContent = "Time left: " + secondsLeft;
+
+
+
+    if (secondsLeft === 0 || secondsLeft < 0) {
+        clearInterval(timerInterval);
+
+        myStop();
+    }
+
+    function myStop() {
+        if (sendMessage6) {
+            clearInterval(timerInterval);
+        }
+    }
+
+}, 1000);
 
 
 function quizGame() {
@@ -69,25 +88,7 @@ function quizGame() {
     })
 
     function timeLimit() {
-        var timerInterval = setInterval(function () {
-            secondsLeft--;
-            timer.textContent = "Time left: " + secondsLeft;
-
-
-
-            if (secondsLeft === 0 || secondsLeft < 0) {
-                clearInterval(timerInterval);
-
-                myStop();
-            }
-
-            function myStop() {
-                if (sendMessage6) {
-                    clearInterval(timerInterval);
-                }
-            }
-
-        }, 1000);
+        timerInterval
 
     }
 
@@ -245,7 +246,7 @@ function quizGame() {
 
         answer6.addEventListener("click", function () {
             sendMessage6();
-            // myStopFunction(); timeInterval is not a global var?
+            // myStopFunction(); timerInterval is not a global var?
             // clearInterval(timerInterval);
         })
     }
@@ -254,9 +255,9 @@ function quizGame() {
         startGame.textContent = "Good answer"
         mainQuestion.textContent = "I'm very cool indeed."
 
-        
+        clearInterval(timerInterval);
 
-        
+
         answer6.removeChild(button6)
         wrongAnswer1.removeChild(buttonWrong1)
         wrongAnswer2.removeChild(buttonWrong2)
