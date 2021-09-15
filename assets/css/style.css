@@ -1,0 +1,12 @@
+
+body {
+    font-family: monospace ;
+    border: 2px solid darkslateblue;
+    padding: 100px;
+    margin: 20px 300px 300px 300px;
+}
+
+input {
+    color: white;
+    background-color: darkslateblue;
+}

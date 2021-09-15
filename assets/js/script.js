@@ -336,9 +336,12 @@ function quizGame() {
 
         saveButton.appendChild(endButton);
         endButton.setAttribute("type", "button")
-        endButton.setAttribute("value", "Your name");
+        endButton.setAttribute("value", "Submit your name");
         nameInput.appendChild(field)
         field.setAttribute("type", "text")
+
+        var recentPlayer = document.querySelector(".recent")
+        recentPlayer.textContent = "Your Scores: "
 
         saveButton.addEventListener("click", () => {
             console.log(field.value);
