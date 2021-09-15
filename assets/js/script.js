@@ -341,20 +341,20 @@ function quizGame() {
         field.setAttribute("type", "text")
 
         var recentPlayer = document.querySelector(".recent")
-        recentPlayer.textContent = "Your Scores: "
+        recentPlayer.textContent = "Previous score: "
 
         saveButton.addEventListener("click", () => {
             console.log(field.value);
             localStorage.setItem("player", field.value);
             localStorage.setItem("timescore", secondsLeft);
             console.log(secondsLeft);
-            yourName.innerHTML = localStorage.getItem("player");
-            score.innerHTML = localStorage.getItem("timescore");
+            
             console.log(score);
 
             
         })
-
+        yourName.innerHTML = localStorage.getItem("player");
+        score.innerHTML = localStorage.getItem("timescore");
     }
     // function myStopFunction() {
 
