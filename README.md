@@ -18,7 +18,7 @@
 ## Credits
 - https://www.w3schools.com/tags/tag_input.asp Input tags.
 - https://www.w3schools.com/jsref/met_element_addeventlistener.asp event listeners.
-- Lots of help from Lief, my instructor as well as my tutor Dru Sanchez.
+- Lots of help from Lief Hetland, my instructor as well as my tutor Dru Sanchez.
 
 ## License
 - MIT License

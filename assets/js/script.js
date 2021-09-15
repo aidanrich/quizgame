@@ -341,7 +341,7 @@ function quizGame() {
         field.setAttribute("type", "text")
 
         var recentPlayer = document.querySelector(".recent")
-        recentPlayer.textContent = "Previous score: "
+        recentPlayer.textContent = "Previous score will be listed here on next playthrough: "
 
         saveButton.addEventListener("click", () => {
             console.log(field.value);
@@ -350,7 +350,8 @@ function quizGame() {
             console.log(secondsLeft);
             
             console.log(score);
-
+            yourName.innerHTML = localStorage.getItem("player");
+            score.innerHTML = localStorage.getItem("timescore");
             
         })
         yourName.innerHTML = localStorage.getItem("player");
