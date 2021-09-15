@@ -30,6 +30,7 @@ var nameInput = document.querySelector(".field");
 var field = document.createElement("input")
 
 var score = document.querySelector(".finalscore");
+var yourName = document.querySelector(".username")
 
 // game button vars below
 
@@ -340,12 +341,15 @@ function quizGame() {
         field.setAttribute("type", "text")
 
         saveButton.addEventListener("click", () => {
-            console.log(field.value)
-            localStorage.setItem("player", field.value)
-            localStorage.setItem("finalscore", secondsLeft)
+            console.log(field.value);
+            localStorage.setItem("player", field.value);
+            localStorage.setItem("timescore", secondsLeft);
             console.log(secondsLeft);
-            score = localStorage.getItem("player", + "finalscore")
+            yourName.innerHTML = localStorage.getItem("player");
+            score.innerHTML = localStorage.getItem("timescore");
             console.log(score);
+
+            
         })
 
     }
